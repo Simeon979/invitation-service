@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 
@@ -46,5 +47,53 @@ const send = async (message, email) => {
 
   console.log(response);
 };
+=======
+>>>>>>> a5ce4fd... First commits
 
-module.exports = { send };
+// var nodemailer = require('nodemailer');
+// const EmailValidator = require('email-deep-validator');
+// const emailValidator = new EmailValidator();
+
+
+// // verifyMail, returns if the user_email_address is valid and email can enter
+// // @param :: user_email_address
+// // @return :: mail_status
+// const verifyMail = async (user_email_address) =>{
+//     let mail_status = false
+//     const {wellFormed, validDomain, validMailbox} = await emailValidator.verify(user_email_address);
+//     if (wellFormed && validDomain && validMailbox) {
+//         // console.log('Well- formed email recieved');
+//         mail_status = true
+//     }
+//     return mail_status;
+// }
+
+
+// const send = async (message) => {
+//     var transporter = nodemailer.createTransport({
+//         service: 'Gmail',
+//         auth: {
+//           user: 'fawaletimmy@gmail.com',
+//           pass: 'kunle21121996',
+//         }
+//       });
+      
+//       var mailOptions = {
+//         from: 'fawaletimmy@gmail.com',
+//         to: 'fawaletimmy1@gmail.com',
+//         subject: `Sending Email using Node.js:: \n ${message}`,
+//         text: 'That was easy!'
+//       };
+      
+//       transporter.sendMail(mailOptions, function(error, info){
+//         if (error) {
+//           console.log(error);
+//         } else {
+//           console.log('Email sent: ' + info.response);
+//         }
+//       });
+// };
+
+
+
+// module.exports = { send, verifyMail };

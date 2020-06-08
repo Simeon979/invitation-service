@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let { body, sanitizeBody, validationResult } = require("express-validator");
 
 let { verify, remove } = require("../services/store");
@@ -37,3 +38,6 @@ const verifyHandler = [
 ];
 
 module.exports = verifyHandler;
+=======
+// verification logic goes here
+>>>>>>> a5ce4fd... First commits

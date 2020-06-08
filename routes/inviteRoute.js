@@ -16,9 +16,7 @@ router.get('/',async (req, res)=>{
 })
 router.post("/send", async (req, res) => {
     await sendHandler(req,res)
-    res.json({
-        msg: 'why now'
-    })
+    
 }
 );
 // app.post("/verify", verifyHandler);

@@ -36,14 +36,14 @@ const send = async (token) => {
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-          user: 'fawaletimmy@gmail.com',
-          pass: 'kunle21121996',
+          user: '',
+          pass: '',
         }
       });
       
       var mailOptions = {
-        from: 'fawaletimmy@gmail.com',
-        to: 'fawaletimmy1@gmail.com',
+        from: '',
+        to: '',
         subject: `New Invitation token`,
         text: `Your invitation token is \n ${token}`
       };
@@ -57,13 +57,23 @@ const send = async (token) => {
       });
 };
 
-const sendHandler = (req, res) => {
-    console.log(res.body);
-    
-    // await verifyMail(req._mail)
-    // .then(status => console.log(status)
-    // .catch(err => console.log(err)
-    // )
+const sendHandler = async (req, res) => {
+    // console.log(req,res);
+    // res.status(200).send(req.query._mail)
+
+    // just create a function sendHandler in controllers/send.js, accept the request,
+    //  process it (using functions in the services folder that will be completed later),
+    //   and set up the response. and then export the function
+
+let stat = false;
+    await verifyMail(req.params._mail)
+    .then(status => {
+        console.log(status);
+        res.status(200).send(status)
+    }
+        )
+    .catch(err => console.log(err)
+    )
     // ).then(st => console.log(st))
     // .catch(er => console.log(er)
     // )

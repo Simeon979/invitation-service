@@ -1,42 +1,12 @@
-const redis = require('redis');
+let { getAll } = require("../services/store");
 
-//Create Redis client
-let client = redis.createClient();
-
-//Listening on connection
-client.on('connect', ()=>{
-     console.log("Connected to redis...");
-});
-client.on('error', () => {
-    console.log(error);
-});
-
-const getInvites = (req, res, next)=>{
-    
-    client.hgetall(invites, async (err, data) => {
-
-        if(err){
-
-            res.status(500).json({"error": err});
-
-        }else{
-
-            let data = req.params.invites;
-            let result = [];
-
-            data.foreach(async(email, username, inviteCode)=>{
-
-                await result.push({Email:email, Username: username, InviteCode:inviteCode});
-
-            });
-            res.status(200).json.stringify(result);
-
-
-        }
-
-
-    });
-
+const getInvites = async (req, res, next) => {
+  try {
+    let allPending = await getAll();
+    return res.json(allPending);
+  } catch (err) {
+    return next(err);
+  }
 };
 
 module.exports = getInvites;

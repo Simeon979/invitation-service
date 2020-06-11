@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 
@@ -48,13 +46,5 @@ const send = async (message, email) => {
 
   console.log(response);
 };
-=======
->>>>>>> a5ce4fd... First commits
-=======
-const send = async (message) => {
-    console.log(message);
-    
-};
->>>>>>> 9756929... Fixed all according to spec
 
 module.exports = { send };
